@@ -16,11 +16,29 @@ xhttp.onreadystatechange = function() {
            rowDiv.classList.add('row');
            rowDiv.innerHTML = `
             <div class="left-section">
-                <h5 class="company">${row.company}</h5>
-                <h3 class="position">${row.position}</h3>
+                <h3 class="company">${row.company}</h5>
+                <h2 class="position">${row.position}</h3>
                 <p class="location">${row.location}</p>
-            </div>`
+            </div>
+            <div class="mid-section">
+                ${row.tags.map(function(tag) {
+                    return `<h3 class="tag">${tag}</h3>`
+                }).join('')}
+            </div>
+            <div class="mid-right-section">
+                ${new Date(row.date).toLocaleString()}
+            </div>
+            <div class="right-section">
+                <a href=${row.url}>
+                    <button class="apply">Apply</button>
+                </a>
+            </div>`;
+           container.appendChild(rowDiv);
+           rowDiv.addEventListener('mouseover', e => {
+               rowDiv.style.border = "5px solid red";
+           })
        })
+
     }
 };
 xhttp.open("GET", "https://remoteok.io/api", true);
