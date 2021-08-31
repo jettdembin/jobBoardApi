@@ -17,6 +17,16 @@ html, body {
 body {
 }
 
+a {
+    text-decoration:none;
+    color:rgba(0, 0, 0)
+}
+
+a:visited {
+    text-decoration:none;
+    color:rgba(0, 0, 0)
+}
+
 h3 {
     font-weight: 500;
 }
@@ -24,28 +34,33 @@ h3 {
 .container {
     max-width: 1100px;
     margin-top: 200px;
-    margin: 200px auto auto auto;
+    margin-inline: auto;
 }
 
 .row {
     background-color: white;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
     border-radius: 4px;
     margin: 10px 0;
     padding: 15px 10px;
+}
+
+.row:hover {
+    background-color: rgb(245, 245, 245);
+    transform: scale(1.01);
+    cursor: pointer;
+}
+
+.row-cntr {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.row:hover {
-    cursor: pointer;
-    transform: scaleY(1.01);
-}
-
 .left-section, .mid-section {
     width: 33%;
 }
+
 .mid-section {
     display: flex;
     flex-wrap: wrap;
@@ -53,20 +68,22 @@ h3 {
     height: 50%;
     margin: auto;
 }
+
 .mid-right-section {
     width: 20%;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 8px;
-
+    font-size: 1.1ch;
 }
+
 .right-section {
     width: 15%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 .apply {
     background-color: rgb(255, 71, 66);
     color: white;
@@ -77,9 +94,15 @@ h3 {
     border: none;
 }
 
+.apply:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
 .company, .position {
     font-size: 17px;
 }
+
 .location {
     font-size: 12px;
     text-transform: uppercase;
@@ -93,6 +116,7 @@ h3 {
     font-size: 12px;
     font-weight: 600;
 }
+
 .custom-shape-divider-top-1630188080 {
     position: absolute;
     top: 0;
