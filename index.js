@@ -15,31 +15,71 @@ xhttp.onreadystatechange = function() {
            var rowDiv = document.createElement('div');
            rowDiv.classList.add('row');
            rowDiv.innerHTML = `
-            <div class="left-section">
-                <h3 class="company">${row.company}</h5>
-                <h2 class="position">${row.position}</h3>
-                <p class="location">${row.location}</p>
-            </div>
-            <div class="mid-section">
-                ${row.tags.map(function(tag) {
-                    return `<h3 class="tag">${tag}</h3>`
-                }).join('')}
-            </div>
-            <div class="mid-right-section">
-                ${new Date(row.date).toLocaleString()}
-            </div>
-            <div class="right-section">
-                <a href=${row.url}>
-                    <button class="apply">Apply</button>
-                </a>
-            </div>`;
+           <a href=${row.url}>
+                <div class="row-cntr">
+                    <div class="left-section">
+                        <h3 class="company">${row.company}</h5>
+                        <h2 class="position">${row.position}</h3>
+                        <p class="location">${row.location}</p>
+                    </div>
+                    <div class="mid-section">
+                        ${row.tags.map(function(tag) {
+                            return `<h3 class="tag">${tag}</h3>`
+                        }).join('')}
+                    </div>
+                    <div class="mid-right-section">
+                        ${new Date(row.date).toLocaleString()}
+                    </div>
+                    <div class="right-section">
+                        <button class="apply">Apply</button>
+                    </div>
+                </div>
+            </a>`;
            container.appendChild(rowDiv);
-           rowDiv.addEventListener('mouseover', e => {
-               rowDiv.style.border = "5px solid red";
+           /*rowDiv.addEventListener('mouseenter', e => {
+            rowDiv.innerHTML = `
+                <div class="left-section">
+                    <h3 class="company">${row.company}</h5>
+                    <h2 class="position">${row.position}</h3>
+                    <p class="location">${row.location}</p>
+                </div>
+                <div class="mid-section">
+                    ${row.tags.map(function(tag) {
+                        return `<h3 class="tag">${tag}</h3>`
+                    }).join('')}
+                </div>
+                <div class="mid-right-section">
+                    ${new Date(row.date).toLocaleString()}
+                </div>
+                <div class="right-section">
+                    <a href=${row.url}>
+                        <button class="apply">Apply</button>
+                    </a>
+                </div>`;
            })
+           rowDiv.addEventListener('mouseleave', e => {
+            rowDiv.innerHTML = `
+            <div class="left-section">
+                    <h3 class="company">${row.company}</h5>
+                    <h2 class="position">${row.position}</h3>
+                    <p class="location">${row.location}</p>
+                </div>
+                <div class="mid-section">
+                    ${row.tags.map(function(tag) {
+                        return `<h3 class="tag">${tag}</h3>`
+                    }).join('')}
+                </div>
+                <div class="mid-right-section">
+                    ${new Date(row.date).toLocaleString()}
+                </div>
+                <div class="right-section">
+                </div>`;
+            
+            })
+        */
        })
-
     }
 };
+
 xhttp.open("GET", "https://remoteok.io/api", true);
 xhttp.send();
