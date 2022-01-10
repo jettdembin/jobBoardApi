@@ -1,4 +1,4 @@
-Job Board
+# Job Board API
 
 This is a Job Board application created through the use on remoteok.com API key.
 
