@@ -1,4 +1,4 @@
-# Job Board API
+# Remote Now API
 
 This is a Job Board application created through the use on remoteok.com API key.
 
