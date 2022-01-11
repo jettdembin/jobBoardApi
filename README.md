@@ -1,6 +1,6 @@
 # Remote Now API
 
-This is a Job Board application created through the use on remoteok.com API key.
+This is a Job Board application created through the use of remoteok.com's API key.
 
 The application demonstrates the aquisition of data through an API.
 
